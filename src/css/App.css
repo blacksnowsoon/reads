@@ -1,0 +1,24 @@
+
+/* --------------------main App container style------------------------ */
+.App {
+  text-align: center;
+  position: relative;
+}
+/* ------------------header and logo style---------------------- */
+.sec-logo {
+  display: flex;
+  align-items: center;
+  margin-left: 2rem;
+  color: white;
+}
+.App-logo {
+  height: 9vmin;
+  pointer-events: none;
+}
+.App-header {
+  background-color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  
+}

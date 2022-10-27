@@ -1,0 +1,197 @@
+/* variables */
+:root{
+  --primary-color: hwb(130 9% 51%);
+  --secondry-color: hsl(0, 5%, 80%, 50%);
+  --primary-trans: hwb(130 9% 51% / .6);
+  --glassy: rgba(36, 40, 48, 0.8);
+}
+/* -----------------------global style---------------------------- */
+/*  */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background-color: var(--secondry-color);
+}
+ul {
+  padding: 0;
+}
+
+/* ----------------floating button style--------------------- */
+.floating-btn {
+  aspect-ratio: 1;
+  min-width: 2rem;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  position: fixed;
+  padding: .5rem;
+  bottom: 2rem;
+  right: 2.5rem;
+  cursor: pointer;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-align: center;
+  border: none;
+  color: #fff;
+  transition: all 250ms linear;
+}
+.floating-btn:hover {
+  transform: translateY(.375rem);
+}
+
+/* ----------------shelf container style--------------------- */
+.sec-shelf {
+  text-align: left;
+  margin-bottom: 2rem;
+}
+.sec-shelf h3 {
+  padding-inline-start: 2rem;
+}
+/* shelf styles */
+.sec-shelf-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+  list-style: none;
+}
+.sec-shelf-content * {
+  margin: 0;
+}
+/* -----------------Bookcard style--------------------------- */
+.book-card {
+  position: relative;
+  width: 12rem;
+  height: 20rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: var(--secondry-color);
+  border-block-start: 3px solid;
+  border-inline-start: 3px;
+  border-image-source: linear-gradient(90deg, black 80%, green 20%);
+  border-image-slice: 1;
+  box-shadow: -0.21rem 0.21rem 0.3rem rgba(50, 50, 0, 0.76);
+  
+}
+.book-card .img {
+  margin: 0 auto;
+  outline: 2px solid;
+  text-align: center;
+  background-repeat: no-repeat;
+  background-position: center;
+
+}
+.book-name {
+  text-align: center;
+  padding: 0 .275rem;
+}
+.book-auther {
+  padding: 0.375rem;
+  font-size: 0.75em;
+  font-weight: 300;
+}
+.book-discription {
+  position: absolute;
+  inset: 0;
+  outline: 1px solid;
+  
+  background-color: var(--glassy);
+  padding: .375rem;
+  text-align: center;
+  clip-path: polygon(0% 100%, 0% 0%, 0% 0%, 0% 0%);
+  color: #fff;
+  z-index: 99;
+  transition: all 750ms linear;
+}
+.book-card:hover .book-discription{
+  clip-path: polygon(0% 100%, 0% 0%, 100% 0%, 100% 100%);
+}
+.book-discription p{
+  line-height: 1.5rem;
+}
+.book-discription a{
+  position: absolute;
+  bottom: 2rem;
+  color: #fff;
+  transform: translateX(-50%);
+}
+.btn-warper {
+  filter: drop-shadow(-0.1rem 0.2rem .2rem rgba(50, 50, 0, 0.76));
+  position: absolute;
+  right: 2px;
+  bottom: -2rem;
+}
+.card-context-btn {
+  aspect-ratio: 1 / .95;
+  width: 2rem;
+  outline: none;
+  background-color: var(--primary-color);
+  color: #fff;
+  cursor: pointer;
+  border-top: none;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% 70%, 0% 100%);
+}
+.btn-warper:hover {
+  transform: translateY(2.5%);
+}
+.context-list {
+  aspect-ratio: 1;
+  width: 2rem;
+  background-color: var(--primary-color);
+  color: var(--primary-color);
+  padding: 0;
+  border: none;
+  outline: none;
+  border-radius: 50%;
+  appearance: none;
+}
+
+/* -------------------search section style---------------------- */
+.search-header {
+  background-color: #fff;
+  padding: .5rem;
+  box-shadow: 1rem 0rem 1rem #282c34;
+}
+.search-form {
+  display: flex;
+  padding: .2rem 0;
+  align-content: flex-start;
+  justify-content: center;
+  justify-items: end;
+}
+.search-form input {
+  margin: 0;
+  width: 100%;
+  padding: .375rem;
+  font-weight: 600;
+  font-size: 1.2em;
+  border: none;
+  outline: none;
+}
+.search-form input:focus {
+  outline: 2px solid var(--glassy);
+}
+.search-form .back-btn {
+  aspect-ratio: 1;
+  width: 2.5rem;
+  background-image: url('../icons/arrow-back.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  cursor: pointer;
+  margin-right: 1rem;
+}
+
+/* ---------------media queries-------------------------- */
+@media screen and (max-width: 23rem) {
+  .sec-shelf-content {
+    flex-direction: column;
+    gap: 2.3rem;
+  }
+}
